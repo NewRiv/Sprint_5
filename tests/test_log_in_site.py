@@ -18,7 +18,6 @@ class TestLogInToTheSite:
         driver.find_element(*page.button_log_in).click()
         WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located((page.button_set_an_order)))
         assert driver.find_element(*page.button_set_an_order)
-        driver.quit()
 
     def test_check_personal_account_in_main_page(self, driver, page):
         #вход через кнопку «Личный кабинет»
@@ -27,7 +26,6 @@ class TestLogInToTheSite:
         driver.find_element(*page.button_personal_account).click()
         assert driver.find_element(*page.header_log_in_page)
         assert Const.LOGIN_PAGE == driver.current_url
-        driver.quit()
 
     def test_check_log_in_in_registration_page(self, driver, page):
         #вход через кнопку в форме регистрации

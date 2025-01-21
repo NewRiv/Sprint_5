@@ -12,4 +12,3 @@ class TestTransferAccountPage:
         driver.find_element(*page.button_personal_account).click()
         WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located((page.button_log_in)))
         assert driver.find_element(*page.header_log_in_page)
-        driver.quit()
